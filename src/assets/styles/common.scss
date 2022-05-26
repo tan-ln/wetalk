@@ -10,15 +10,17 @@ body {
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
-  position: absolute;
   -ms-overflow-style: none;
   font-family: SourceHanSansCN-Regular PingFang-Bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 背景 */
 body {
   /* background-image: url('../images/bg/1.jpg'); */
-  background-image: url('../images/bg/aaa.png');
+  background-image: url('/src/assets/images/bg/aaa.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -40,6 +42,20 @@ body .frosted__glass__wrapper {
   filter: blur(.068rem);
   filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=4, MakeShadow=false);
 }
+
+// #app {
+//   box-sizing: border-box;
+//   overflow: hidden;
+//   display: flex;
+//   width: 9.58rem;
+//   height: 6.8rem;
+//   position: relative;
+//   border-radius: .12rem;
+//   box-shadow: 0 .03rem .01rem -.2rem rgba(0,0,0,.2), 0 .06rem .2rem .02rem rgba(0,0,0,.14), 0 .06rem .06rem 0 rgba(0,0,0,.12);
+//   border-width: thin;
+//   z-index: 9;
+//   transition: all .25s;
+// }
 
 div::-webkit-scrollbar {
   display: none;
