@@ -1,4 +1,6 @@
 export const enum Names {
   AUTH = 'AUTH',
-  OTHER = 'OTHER'
+  HELPER = 'HELPER',
+  CHAT = 'CHAT',
+  CONTACT = 'CONTACT'
 }

@@ -8,6 +8,7 @@ export default defineConfig({
   base: process.env.ELECTRON == 'true' ? './' : '',
   plugins: [vue()],
   server: {
+    hmr: true,
     host: '0.0.0.0',
     port: 3000,
     proxy: {
@@ -33,7 +34,8 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: '@import "@/assets/styles/variables.scss";'
+        additionalData: '@import "@/assets/styles/index.scss";'
+        // additionalData: '@import "@/assets/styles/index.scss";@import "@/assets/styles/base.css";@import "@/assets/styles/common.scss";@import "@/assets/styles/mixin.scss";@import "@/assets/styles/scrollbar.scss";@import "@/assets/styles/variables.scss";'
       }
     }
   }

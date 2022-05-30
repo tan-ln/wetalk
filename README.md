@@ -34,13 +34,18 @@ module.exports = {
 ```
 
 ## Sass
-- 使用全局变量
+- 使用全局变量、mixin...
 ```js
 {
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: '@import "@/assets/styles/variables.scss";'
+        // 多个引入 1
+        // additionalData: '@import "@/assets/styles/index.scss";'
+        // 多个 2
+        // additionalData: '@import "@/assets/styles/index.scss";@import "@/assets/styles/base.css";@import "@/assets/styles/common.scss";@import "@/assets/styles/mixin.scss";@import "@/assets/styles/scrollbar.scss";@import "@/assets/styles/variables.scss";'
+
       }
     }
   }
@@ -127,3 +132,6 @@ export const useAuthStore = defineStore(Names.AUTH, {
  * getter 和 action 当中的方法可以互相调用
  */
 ```
+
+## socket.io 客户端
+参考 [https://segmentfault.com/a/1190000041333998](https://segmentfault.com/a/1190000041333998)

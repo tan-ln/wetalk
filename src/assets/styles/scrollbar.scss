@@ -1,3 +1,4 @@
+@import './variables.scss'; 
 // 消息输入框 textarea
 /*滚动条整体样式*/
 textarea::-webkit-scrollbar {
@@ -6,6 +7,7 @@ textarea::-webkit-scrollbar {
 /*滚动条滑块*/
 textarea::-webkit-scrollbar-thumb {
   // border-radius: 40%;
+  box-shadow: inset 0 0 .05rem rgba(0,0,0,0.2);
   -webkit-box-shadow: inset 0 0 .05rem rgba(0,0,0,0.2);
   // background: $msg_bg_color linear-gradient(to top, rgba(255, 240, 191, 0.1rem), #fff);
   background: $msg_bg_color linear-gradient(to top, rgba(255, 255, 255, 0), $border_color);
@@ -13,6 +15,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 /*滚动条轨道*/
 textarea::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 .01rem rgba(0,0,0,0);
   -webkit-box-shadow: inset 0 0 .01rem rgba(0,0,0,0);
   border-radius: 40%;
   // background: #ebebeb;

@@ -1,21 +1,16 @@
 import { defineStore } from 'pinia'
 import { Names } from './store-name'
+import { TModal } from './types'
 
-type TModal = {
-  show: boolean,
-  title?: string | number,
-  msg?: string,
-}
-
-export const useOtherStore = defineStore(Names.OTHER, {
+export const useHelperStore = defineStore(Names.HELPER, {
   state: () => ({
     // 导航栏
     navbar: {
       activeId: <number>0,
       // 导航列表
       navList: [
-        { title: 'Home', name: 'home', fontCode: '&#xe690;', to: '/' },
-        { title: 'Messages', name: 'messages', fontCode: '&#xe601;', to: '/messages' },
+        // { title: 'Home', name: 'home', fontCode: '&#xe690;', to: '/' },
+        { title: 'Chat', name: 'chat', fontCode: '&#xe601;', to: '/chat' },
         { title: 'Contacts', name: 'contacts', fontCode: '&#xe61f;', to: '/contacts' },
         { title: 'Folders', name: 'folders', fontCode: '&#xeac5;', to: '/folders' },
         { title: 'Collections', name: 'collections', fontCode: '&#xeac6;', to: '/collections' }
@@ -37,6 +32,9 @@ export const useOtherStore = defineStore(Names.OTHER, {
     },
     hideModal () {
       this.modal.show = false
+    },
+    changeNavbarActiveId (index: number) {
+      this.navbar.activeId = index
     }
   }
 })

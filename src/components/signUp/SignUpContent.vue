@@ -45,7 +45,7 @@
 import { computed, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/store/auth'
-import { useOtherStore } from '@/store/index'
+import { useHelperStore } from '@/store/helper'
 import 'animate.css'
 
 const changeTitle = ref<boolean>(false)
@@ -56,7 +56,7 @@ const password = ref<string>('123')
 const route = useRoute()
 const router = useRouter()
 const Auth = useAuthStore()
-const Other = useOtherStore()
+const Helper = useHelperStore()
 
 const beforeAniEnter = () => {
   changeTitle.value = true
@@ -77,11 +77,11 @@ const handleSubmit = async () => {
   }
   await Auth.reqSignIn(data)
   // modal
-  if (Other.modal.show) loading.value = false
+  if (Helper.modal.show) loading.value = false
   // 登录或注册后 路由跳转及动画状态修改
   if (Auth.__self.email && Auth.__self.username) {
     loading.value = false
-    router.replace({ path: '/' })
+    router.replace({ path: '/chat' })
   }
   //   this.$store.commit('changeFlipAni', true)
 }

@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { Names } from './store-name'
 import { post } from '@/api/request'
-import { useOtherStore } from './index'
+import { useHelperStore } from './helper'
 
 // login user data
 type LoginData = {
@@ -49,7 +49,7 @@ export const useAuthStore = defineStore(Names.AUTH, {
       if (res.code === 200) {
         this.__self = res.data as TUserInfo
       } else {
-        const otherStore = useOtherStore()
+        const otherStore = useHelperStore()
         console.log('show modal')
         // show modal
         otherStore.showModal({
